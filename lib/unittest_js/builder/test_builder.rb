@@ -43,6 +43,11 @@ module UnittestJS
         ].join("\n")
       end
       
+      def additional_lib_files
+        return if @options.additional_javascript_includes.nil?
+        @options.additional_javascript_includes.collect { |file| to_script_tag(file) }.join("\n")
+      end
+      
       def title
         @title ||= name.split('_').map{ |w| w.capitalize }.join(' ').strip
       end

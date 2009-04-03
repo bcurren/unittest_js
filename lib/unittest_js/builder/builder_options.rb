@@ -47,6 +47,10 @@ module UnittestJS
       def output_tests_dir
         @output_tests_dir ||= DirPathname.new(output_dir, TESTS)
       end
+      
+      def additional_javascript_includes
+        @additional_javascript_includes ||= @options[:additional_javascript_includes]
+      end
 
       def template
         @template ||= Template.from(@options[:template] || :default, templates_dir)
